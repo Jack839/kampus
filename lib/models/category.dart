@@ -11,7 +11,7 @@ class Category {
     this.rating = 0.0,
   });
 
-  static List<Category> popularCourseList = [
+  static List<Category> appMenuList = [
     Category(
       imagePath: 'assets/images/live_bus_tracking.png',
       title: 'Live Bus Tracking',

@@ -39,9 +39,9 @@ class _menuButtonsListViewState extends State<menuButtonsListView>
               physics: BouncingScrollPhysics(),
               scrollDirection: Axis.vertical,
               children: List.generate(
-                Category.popularCourseList.length,
+                Category.appMenuList.length,
                     (index) {
-                  var count = Category.popularCourseList.length;
+                  var count = Category.appMenuList.length;
                   var animation = Tween(begin: 0.0, end: 1.0).animate(
                     CurvedAnimation(
                       parent: animationController,
@@ -54,7 +54,7 @@ class _menuButtonsListViewState extends State<menuButtonsListView>
                     callback: () {
                       widget.callBack();
                     },
-                    category: Category.popularCourseList[index],
+                    category: Category.appMenuList[index],
                     animation: animation,
                     animationController: animationController,
                   );
