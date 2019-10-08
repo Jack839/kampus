@@ -155,9 +155,3 @@ Widget getAppBarUI() {
   );
 }
 
-enum CategoryType {
-  ui,
-  coding,
-  basic,
-}
-
