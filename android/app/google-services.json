@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "650307960939",
+    "firebase_url": "https://kampus-310a1.firebaseio.com",
+    "project_id": "kampus-310a1",
+    "storage_bucket": "kampus-310a1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:650307960939:android:66b119f8806e771e7d312e",
+        "android_client_info": {
+          "package_name": "com.tinkering.kampus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "650307960939-c567i8v51g7l3utnfab7a0hvpjcvndd4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6YuLfMiv4cxg39fHpWk19SJinhsNMjX8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "650307960939-c567i8v51g7l3utnfab7a0hvpjcvndd4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

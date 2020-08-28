@@ -7,7 +7,7 @@ import 'menuButtonsListView.dart';
 
 void main() {
   SystemChrome.setPreferredOrientations(
-      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown])
+          [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown])
       .then((_) => runApp(new MyApp()));
   // runApp(new MyApp());
 }
@@ -20,90 +20,65 @@ class MyApp extends StatelessWidget {
       statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.dark,
       statusBarBrightness:
-      Platform.isAndroid ? Brightness.dark : Brightness.light,
+          Platform.isAndroid ? Brightness.dark : Brightness.light,
       systemNavigationBarColor: Colors.white,
       systemNavigationBarDividerColor: Colors.grey,
       systemNavigationBarIconBrightness: Brightness.dark,
     ));
     return MaterialApp(
-      title: Strings.appTitleBar,
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: new Color(0xFFFFFFFF),
+        title: Strings.appTitleBar,
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primaryColor: new Color(0xFFFFFFFF),
+        ),
+        home: menuListView());
+  }
+}
+
+class menuListView extends StatefulWidget {
+  @override
+  createState() => new menuListViewState();
+}
+
+class menuListViewState extends State<menuListView> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Color(0xFFFFFFFF),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: Column(
+          children: <Widget>[
+            SizedBox(
+              height: MediaQuery.of(context).padding.top,
+            ),
+            getAppBarUI(),
+            Container(
+              height: MediaQuery.of(context).size.height - 88,
+              child: Column(
+                children: <Widget>[
+                  Flexible(
+                    child: getMainUI(context),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
-      home: menuListView()
     );
   }
 }
 
-class menuListView extends StatefulWidget{
-  @override
-  createState() => new menuListViewState();
-}
-class menuListViewState extends State<menuListView> {
-  @override
-  Widget build(BuildContext context){
-   return new MaterialApp(
-     debugShowCheckedModeBanner: false,
-     home: Container(
-       color: Color(0xFFFFFFFF),
-       child: Scaffold(
-         backgroundColor: Colors.transparent,
-         body: Column(
-           children: <Widget>[
-             SizedBox(
-               height: MediaQuery.of(context).padding.top,
-             ),
-             getAppBarUI(),
-             Expanded(
-               child: SingleChildScrollView(
-                 child: Container(
-                   height: MediaQuery.of(context).size.height,
-                   child: Column(
-                     children: <Widget>[
-                       Flexible(
-                         child: getPopularCourseUI(context),
-                       ),
-                     ],
-                   ),
-                 ),
-               ),
-             ),
-
-           ],
-         ),
-       ),
-     ),
-   );
- }
-}
-
-Widget getPopularCourseUI(BuildContext context) {
+Widget getMainUI(BuildContext context) {
   return Padding(
     padding: const EdgeInsets.only(top: 8.0, left: 18, right: 16),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(
-          "Menu",
-          textAlign: TextAlign.left,
-          style: TextStyle(
-            fontFamily: 'RobotoCondensed',
-            fontWeight: FontWeight.w600,
-            fontSize: 22,
-            letterSpacing: 0.27,
-            color: Color(0xFF17262A),
-          ),
-        ),
         Flexible(
-          child: menuButtonsListView(
-            callBack: () {
-              Scaffold.of(context).showSnackBar(new SnackBar(
-                content: new Text("You Clicked"),
-              ));
-            },
-          ),
+          child: menuButtonsListView(),
         )
       ],
     ),
@@ -154,4 +129,3 @@ Widget getAppBarUI() {
     ),
   );
 }
-
